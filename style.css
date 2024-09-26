@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Manrope", sans-serif;
+    background-color: var(--GrayishBlue);
+}
+:root{
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+main .container {
+    margin: 130px 0 100px;
+}
+main .container .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+    position: relative;
+}
+main .container .content .img-slide{
+    width: clamp(300px,30%,400px);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    object-fit: fill;
+    height: 400px;
+}
+main .container .content .information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color:#fff;
+    width: clamp(500px,50%,600px);
+    height: 400px;
+    padding: 8px;
+}
+main .container .content .information .title-head{
+    font-family:"Manrope" ;
+    font-weight: 700px;
+    font-size: 30px;
+    margin: 0 0 40px 50px;
+    opacity: 0.8;
+}
+main .container .content .information .paragraph{
+    font-family:"Manrope" ;
+    font-weight: 500px;
+    font-size: 16px;
+    margin: 0 60px 10px 0px;
+    opacity: 0.8;
+    line-height: 30px;
+    width: 430px;
+}
+
+
+main .container .content .information .social {
+    background-color: var(--VeryDarkGrayishBlue);
+    border-radius: 10px;
+    position: absolute;
+    width: 440px;
+    top: 202px;
+    right: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap:20px;
+    height: 80px;
+    opacity: 0;
+    transition: all 0.8s;
+
+  }
+  main .container .content .information .social.active{
+    opacity: 1;
+  }
+
+  main .container .content .information .social::before {
+    content: "";
+    border-left: 10px solid var(--VeryDarkGrayishBlue);
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--VeryDarkGrayishBlue);
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    top: 69px;
+    right: 239px;
+    transform: rotate;
+    transform: rotate(225deg);
+  }
+main .container .content .information .social img{
+    width: 30px;
+    display: inline-block;
+}
+main .container .content .information .social p{
+    background:linear-gradient(to right,var(--LightGrayishBlue) ,var(--DesaturatedDarkBlue) );
+    background-clip: text;
+    color: transparent;
+    margin-left: 60px;
+    letter-spacing: 15px;
+}
+main .container .content .information  .avatar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 30px;
+}
+main .container .content .information  .avatar .share{
+    width: 40px;
+    border-radius: 50%;
+    padding: 10px;
+   margin-right: 60px;
+   background-color: var(--LightGrayishBlue);
+   cursor: pointer;
+}
+main .container .content .information  .avatar .share:hover{
+    background-color: var(--GrayishBlue);
+}
+main .container .content .information  .avatar div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+main .container .content .information  .avatar div img{
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 50px;
+}
+main .container .content .information  .avatar div .title{
+   display: block;
+   margin-left: 10px;
+}
+main .container .content .information  .avatar div .title span:first-child{
+    font-size: 14px;
+    display: block;
+}
+main .container .content .information  .avatar div .title span:nth-child(2){
+    font-size: 11px;
+    display: block;
+    margin-left: 20px;
+    opacity: 0.6;
+}
+@media(max-width:768px){
+    main .container .content .img-slide {
+        width: clamp(320px,30%,400px);
+        object-fit: fill;
+      }
+      main .container .content .information {
+        width: clamp(424px,50%,600px);
+      }
+      main .container .content .information .title-head {
+        margin: 0 0 10px 50px;
+      }
+      main .container .content .information .paragraph {
+        margin: 0 10px 10px 0px;
+        width: 313px;
+      }
+      main .container .content .information .social {
+        width: 425px;
+        top: 310px;
+        right: 11px;
+        height: 90px;
+        border-radius: 0;
+        border-bottom-right-radius: 10px;
+        z-index: 2;
+      }
+      main .container .content .information .avatar .share {
+        z-index: 3;
+        margin: 0 21px 21px 0;
+      }
+      
+main .container .content .information .social::before {
+    display: none;
+  }
+      
+}
+@media(max-width:480px){
+    main .container .content {
+        flex-direction: column;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+      }
+      main .container .content .img-slide {
+        width: clamp(425px,80%,450px);
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+        border-bottom-left-radius:0px;
+        border-bottom-right-radius:0px;
+        
+      }
+      main .container .content .information {
+        width: clamp(424px,80%,480px);
+        border-top-right-radius: 0;
+        border-bottom-left-radius:10px;
+      }
+      main .container .content .information .title-head {
+        margin: 85px 32px 10px 40px;
+        font-size: 21px;
+      }
+      main .container .content .information .avatar {
+        margin-top: 4px;
+      }
+      main .container .content .information .social {
+        width: 425px;
+        top: 728px;
+        right: 28px;
+        height: 72px;
+        border-bottom-left-radius: 10px;
+      }
+      main .container .content .information .avatar .share {
+        margin: 0 21px -16px 0;
+      }
+}
+@media(max-width:375px){
+    main .container .content .img-slide {
+        width: clamp(341px,80%,350px);
+        height: 300px;
+      }
+      main .container .content .information {
+        width: clamp(342px,80%,450px);
+      }
+      main .container .content .information .title-head {
+        margin: 21px 0px 18px 0px;
+        text-align: center;
+      }
+      main .container .content .information .paragraph {
+        margin: 0 0px 24px 0px;
+        text-align: center;
+      }
+      main .container .content .information .avatar {
+        margin-top: 15px;
+      }
+      main .container .content .information .social {
+        width: 344px;
+        top: 624px;
+        right: 14px;
+        height: 76px;
+      }
+      main .container .content .information .social p {
+        margin-left: 10px;
+      }
+      main .container .content .information .avatar div {
+        margin-top: 20px;
+      }
+      main .container .content .information .avatar .share {
+        margin: 0 5px -41px 0;
+        width: 36px;
+      }
+}
